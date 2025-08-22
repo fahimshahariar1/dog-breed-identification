@@ -30,3 +30,5 @@ print(labels_csv.describe())
 labels_csv.head()`
 
 `labels_csv["breed"].value_counts().plot.bar(figsize=(20,5))`
+<img width="1606" height="644" alt="image" src="https://github.com/user-attachments/assets/b0f80c3c-7063-473f-b41d-d54947acde64" />
+
