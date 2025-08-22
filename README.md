@@ -13,14 +13,18 @@ https://www.kaggle.com/competitions/dog-breed-identification
 * There are 120 breeds of Dogs, which means it has  120 different classes.
 * There are around 10k+ test images and 10k+ train images
 ### Get our workspace ready
->
-`import tensorflow as tf
+>`import tensorflow as tf
 import tensorflow_hub as hub
 print(tf.__version__)
-
-#Check for GPU availability
+Check for GPU availability
 print(tf.config.list_physical_devices("GPU"))`
+
 ### Getting our data ready (Turning into tensors)
 With all machine learning models our data has to be in numerical format,So that's what we will be doing first. Turning our images into tensors/numerical representations:
 
 Let's start by accessing our data and checking out the labels
+
+`import pandas as pd
+labels_csv = pd.read_csv("/content/drive/MyDrive/Dog Breed Identificattion/labels.csv")
+print(labels_csv.describe())
+labels_csv.head()`
