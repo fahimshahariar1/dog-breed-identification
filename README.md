@@ -34,7 +34,19 @@ labels_csv.head()`
 
 Let's view an image
 from IPython.display import Image
-Image("/content/drive/MyDrive/Dog Breed Identificattion/train/000bec180eb18c7604dcecc8fe0dba07.jpg")
-<img width="500" height="375" alt="image" src="https://github.com/user-attachments/assets/d45c6ded-e833-4e5f-98e5-2cda1e261ca5" />
+`Image("/content/drive/MyDrive/Dog Breed Identificattion/train/000bec180eb18c7604dcecc8fe0dba07.jpg")`
+
+> <img width="500" height="375" alt="image" src="https://github.com/user-attachments/assets/d45c6ded-e833-4e5f-98e5-2cda1e261ca5" />
 ### Getting images and their labels
-Let's get a list of all our imagen file pathnames
+Let's get a list of all our image file pathnames
+Create pathnames from image ID
+`filename = ["/content/drive/MyDrive/Dog Breed Identificattion/train/" + fname + ".jpg" for fname in labels_csv["id"]]
+filename[:10]`
+Lets' check whether filenames matches actual amount of files
+`import os
+if len(os.listdir("/content/drive/MyDrive/Dog Breed Identificattion/train/")) == len(filename):
+  print("Success")
+else:
+  print("Check again")`
+  Image(filename[200])
+> <img width="500" height="374" alt="image" src="https://github.com/user-attachments/assets/37d27574-505b-4474-a11e-db4f892e1bc7" />
