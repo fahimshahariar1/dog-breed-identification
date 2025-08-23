@@ -32,3 +32,9 @@ labels_csv.head()`
 `labels_csv["breed"].value_counts().plot.bar(figsize=(20,5))`
 <img width="1606" height="644" alt="image" src="https://github.com/user-attachments/assets/b0f80c3c-7063-473f-b41d-d54947acde64" />
 
+Let's view an image
+from IPython.display import Image
+Image("/content/drive/MyDrive/Dog Breed Identificattion/train/000bec180eb18c7604dcecc8fe0dba07.jpg")
+<img width="500" height="375" alt="image" src="https://github.com/user-attachments/assets/d45c6ded-e833-4e5f-98e5-2cda1e261ca5" />
+### Getting images and their labels
+Let's get a list of all our imagen file pathnames
