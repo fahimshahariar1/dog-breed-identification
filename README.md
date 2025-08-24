@@ -75,3 +75,15 @@ X_train, y_train, X_val, y_val = train_test_split(X[:NUM_IMAGES],
                                                   y[:NUM_IMAGES],
                                                   test_size=0.2,
                                                   random_state=42)`
+## Preprocessing Images (Turning image sinto Tensors)
+Define Image size
+IMG_SIZE = 224
+<br>
+Creating a function to preprocess the images<br>
+`def process_image(image_path):
+  image = tf.io.read_file(image_path)
+  image = tf.image.decode_jpeg(image, channels=3)
+  image = tf.image.convert_image_dtype(image, tf.float32)
+  image = tf.image.resize(image, size=[IMG_SIZE, IMG_SIZE])`
+
+ ` return image`<br>
