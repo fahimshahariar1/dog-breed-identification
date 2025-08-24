@@ -61,3 +61,6 @@ len(unique_breeds)`<br>
 boolean_labels = [labels == unique_breeds for labels in labels]
 boolean_labels[2]`<br>
 `print(boolean_labels[0].astype(int))`
+### Setting our very own validation set
+As kaggle dataset doesn't provide us with any validation set, we are going to create our own
+---
