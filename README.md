@@ -87,3 +87,8 @@ Creating a function to preprocess the images<br>
   image = tf.image.resize(image, size=[IMG_SIZE, IMG_SIZE])`
 
  ` return image`<br>
+## Turning our data into batches
+Create a function to return a tuple (image, label)<br>
+`def def_image_label(image_path, label):
+  image = process_image(image_path)
+  return image, label`
