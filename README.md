@@ -62,5 +62,16 @@ boolean_labels = [labels == unique_breeds for labels in labels]
 boolean_labels[2]`<br>
 `print(boolean_labels[0].astype(int))`
 ### Setting our very own validation set
-As kaggle dataset doesn't provide us with any validation set, we are going to create our own
----
+As the Kaggle dataset doesn't provide us with any validation set, we are going to create our own
+Set up X & y variables
+`X = filename
+y = boolean_labels<br>`
+Setup X & y variables<br>
+`X = filename
+y = boolean_labels`<br>
+Let's split the data into train and validation<br>
+`from sklearn.model_selection import train_test_split
+X_train, y_train, X_val, y_val = train_test_split(X[:NUM_IMAGES],
+                                                  y[:NUM_IMAGES],
+                                                  test_size=0.2,
+                                                  random_state=42)`
