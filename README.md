@@ -91,4 +91,20 @@ Creating a function to preprocess the images<br>
 Create a function to return a tuple (image, label)<br>
 `def def_image_label(image_path, label):
   image = process_image(image_path)
-  return image, label`
+  return image, label`<br>
+BATCH_SIZE = 32
+Create a function to turn data into batches
+def create_data_batches(X, y=None, batch_size = BATCH_SIZE, valid_data=False, test_data=False):
+  if test_data:
+    data = tf.data.Dataset.from_tensor_slices((tf.constant(X)))
+    data_batch = data.map(process_image).batch(BATCH_SIZE)
+    return data_batch
+  elif valid_data:
+    data = tf.data.Dataset.from_tensor_slices((tf.constant(X), tf.constant(y)))
+    data_batch = data.map(get_image_label).batch(BATCH_SIZE)
+    return data_batch
+  else:
+    data = tf.data.Dataset.from_tensor_slices((tf.constant(X), tf.constant(y)))
+    data = data.shuffle(buffer_size=len(X))
+    data = data.map(get_image_label).batch(batch_size=BATCH_SIZE)
+  return data_batch
