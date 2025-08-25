@@ -3,7 +3,7 @@ This project builds an end-to-end multi-class image classifier using TensorFlow 
 ## 1. Problem
 > Identifying the breed of a dog given an image of a dog
 ## 2. Data
-> As Data we are using Kaggle's Dog breed identification. You can find it here
+> As Data, we are using Kaggle's Dog breed identification. You can find it here
 https://www.kaggle.com/competitions/dog-breed-identification
 ## 3. Evaluation
 >The evaluation is a file with prediction probabilities for each dog breed of each test image
@@ -20,7 +20,7 @@ Check for GPU availability
 print(tf.config.list_physical_devices("GPU"))`
 
 ### Getting our data ready (Turning into tensors)
-With all machine learning models our data has to be in numerical format,So that's what we will be doing first. Turning our images into tensors/numerical representations:
+With all machine learning models, our data has to be in numerical format,So that's what we will be doing first. Turning our images into tensors/numerical representations:
 
 Let's start by accessing our data and checking out the labels
 
@@ -42,7 +42,7 @@ Let's get a list of all our image file pathnames
 Create pathnames from image ID<br>
 `filename = ["/content/drive/MyDrive/Dog Breed Identificattion/train/" + fname + ".jpg" for fname in labels_csv["id"]]
 filename[:10]`<br>
-Lets' check whether filenames matches actual amount of files<br>
+Let's check whether filenames match the actual number of files<br>
 `import os
 if len(os.listdir("/content/drive/MyDrive/Dog Breed Identificattion/train/")) == len(filename):
   print("Success")
@@ -57,7 +57,7 @@ len(labels)`<br>
 `Find the unique label values
 unique_breeds = np.unique(labels)
 len(unique_breeds)`<br>
-`Turn every labels into a boolean array
+`Turn every label into a boolean array
 boolean_labels = [labels == unique_breeds for labels in labels]
 boolean_labels[2]`<br>
 `print(boolean_labels[0].astype(int))`
@@ -75,7 +75,7 @@ X_train, y_train, X_val, y_val = train_test_split(X[:NUM_IMAGES],
                                                   y[:NUM_IMAGES],
                                                   test_size=0.2,
                                                   random_state=42)`
-## Preprocessing Images (Turning image sinto Tensors)
+## Preprocessing Images (Turning images into Tensors)
 Define Image size
 IMG_SIZE = 224
 <br>
