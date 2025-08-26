@@ -3,7 +3,7 @@ This project builds an end-to-end multi-class image classifier using TensorFlow 
 ## 1. Problem
 > Identifying the breed of a dog given an image of a dog
 ## 2. Data
-> As Data, we are using Kaggle's Dog breed identification. You can find it here
+> As Data, we are using Kaggle's Dog Breed Identification. You can find it here
 https://www.kaggle.com/competitions/dog-breed-identification
 ## 3. Evaluation
 >The evaluation is a file with prediction probabilities for each dog breed of each test image
@@ -94,7 +94,7 @@ Create a function to return a tuple (image, label)<br>
   return image, label`<br>
 BATCH_SIZE = 32
 Create a function to turn data into batches
-def create_data_batches(X, y=None, batch_size = BATCH_SIZE, valid_data=False, test_data=False):
+`def create_data_batches(X, y=None, batch_size = BATCH_SIZE, valid_data=False, test_data=False):
   if test_data:
     data = tf.data.Dataset.from_tensor_slices((tf.constant(X)))
     data_batch = data.map(process_image).batch(BATCH_SIZE)
@@ -107,4 +107,7 @@ def create_data_batches(X, y=None, batch_size = BATCH_SIZE, valid_data=False, te
     data = tf.data.Dataset.from_tensor_slices((tf.constant(X), tf.constant(y)))
     data = data.shuffle(buffer_size=len(X))
     data = data.map(get_image_label).batch(batch_size=BATCH_SIZE)
-  return data_batch
+  return data_batch`
+Create training and validation data batches
+`train_data = create_data_batches(X_train, y_train)
+val_data = create_data_batches(X_val, y_val, valid_data=True)`
