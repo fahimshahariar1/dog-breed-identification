@@ -110,4 +110,6 @@ Create a function to turn data into batches
   return data_batch`
 Create training and validation data batches
 `train_data = create_data_batches(X_train, y_train)
-val_data = create_data_batches(X_val, y_val, valid_data=True)`
+val_data = create_data_batches(X_val, y_val, valid_data=True)`<br>
+## Visualizing Data Batches
+Our data is now in batches, which can be hard to understand, So we will try to visualize them
