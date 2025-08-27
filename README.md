@@ -113,3 +113,10 @@ Create training and validation data batches
 val_data = create_data_batches(X_val, y_val, valid_data=True)`<br>
 ## Visualizing Data Batches
 Our data is now in batches, which can be hard to understand, So we will try to visualize them
+`import matplotlib.pyplot as plt
+def show_25_images(images, labels):
+  plt.figure(figsize=(10,10))
+  for i in range (25):
+    ax = plt.subplots(5, 5, i++)
+    plt.imshow(images[i])
+    plt.title(unique_breeds[labels[i]].argmax)`
