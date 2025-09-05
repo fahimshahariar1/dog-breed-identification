@@ -120,3 +120,8 @@ def show_25_images(images, labels):
     ax = plt.subplots(5, 5, i++)
     plt.imshow(images[i])
     plt.title(unique_breeds[labels[i]].argmax)`
+Then we unbatchify the batch and turn it into a numpy iterator so that we can see the images
+`train_images, train_lables = next(train_data.as_numpy_iterator())
+train_images, train_lables`
+Then, if we visualize the data
+<img width="832" height="811" alt="image" src="https://github.com/user-attachments/assets/ed6e02a0-5f0f-461f-96dc-a1e015b87c2d" />
