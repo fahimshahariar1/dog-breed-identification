@@ -124,4 +124,6 @@ Then we unbatchify the batch and turn it into a numpy iterator so that we can se
 `train_images, train_lables = next(train_data.as_numpy_iterator())
 train_images, train_lables`
 Then, if we visualize the data
-<img width="832" height="811" alt="image" src="https://github.com/user-attachments/assets/ed6e02a0-5f0f-461f-96dc-a1e015b87c2d" />
+<img width="832" height="811" alt="image" src="https://github.com/user-attachments/assets/ed6e02a0-5f0f-461f-96dc-a1e015b87c2d" /><br>
+Notice that every time we run this, we will see different images, because in the function we have called a method named shuffle.
+Now, if we want to visualize for val images
