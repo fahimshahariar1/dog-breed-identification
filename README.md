@@ -128,4 +128,9 @@ Then, if we visualize the data
 Notice that every time we run this, we will see different images, because in the function we have called a method named shuffle.
 Now, if we want to visualize for val images
 <img width="860" height="790" alt="image" src="https://github.com/user-attachments/assets/cde8c4c1-14dc-4c9b-bb9f-968613e2475b" /><br>
-for val images you won't see the images changing everything we run this. because we are not shuffling it in our function
+For val images, you won't see the images changing everything we run this, because we are not shuffling it in our function
+## Building a model
+Set up the input shape for the model
+INPUT_SHAPE = [None. IMG_SIZE, IMG_SIZE, 3]
+
+OUTPUT_SHAPE = len(unique_breeds)
