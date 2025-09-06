@@ -135,3 +135,26 @@ INPUT_SHAPE = [None. IMG_SIZE, IMG_SIZE, 3]
 
 OUTPUT_SHAPE = len(unique_breeds)
 > Our model URL https://tfhub.dev/google/imagenet/mobilenet_v2_035_128/classification/5
+
+import tf_keras as keras                # <-- use tf-keras API
+from tensorflow_hub import KerasLayer
+
+INPUT_SHAPE = (128, 128, 3)
+OUTPUT_SHAPE = 10
+MODEL_URL = "https://tfhub.dev/google/imagenet/mobilenet_v2_035_128/feature_vector/5"  # use feature_vector
+
+def create_model(input_shape=INPUT_SHAPE, output_shape=OUTPUT_SHAPE, model_url=MODEL_URL):
+    print("Building with:", model_url)
+    model = keras.Sequential([
+        KerasLayer(model_url, input_shape=input_shape, trainable=False),  # freeze base
+        keras.layers.Dense(output_shape, activation="softmax")
+    ])
+    model.compile(
+        loss=keras.losses.CategoricalCrossentropy(),
+        optimizer=keras.optimizers.Adam(),
+        metrics=["accuracy"]
+    )
+    return model
+
+model = create_model()
+model.summary()
