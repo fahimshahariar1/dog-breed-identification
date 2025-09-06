@@ -112,7 +112,7 @@ Create training and validation data batches
 `train_data = create_data_batches(X_train, y_train)
 val_data = create_data_batches(X_val, y_val, valid_data=True)`<br>
 ## Visualizing Data Batches
-Our data is now in batches, which can be hard to understand, So we will try to visualize them
+Our data is now in batches, which can be hard to understand, so we will try to visualize it
 `import matplotlib.pyplot as plt
 def show_25_images(images, labels):
   plt.figure(figsize=(10,10))
@@ -134,3 +134,4 @@ Set up the input shape for the model
 INPUT_SHAPE = [None. IMG_SIZE, IMG_SIZE, 3]
 
 OUTPUT_SHAPE = len(unique_breeds)
+> Our model URL https://tfhub.dev/google/imagenet/mobilenet_v2_035_128/classification/5
