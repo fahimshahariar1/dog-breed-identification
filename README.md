@@ -160,7 +160,7 @@ model = create_model()
 model.summary()
 ## Creating Callbacks
 
-Callbacks help us as a function for our model that can be used during training for things such as save progress, check its progress
+Callbacks help us as a function for our model that can be used during training for things such as saving progress, checking its progress
 
 ### Tensoboard Callback 
 Load Tensorboard notebook extension
@@ -169,3 +169,5 @@ import datetime
 def create_tensorboard_callback():
   logdir = os.path.join("/content/drive/MyDrive/Dog Breed Identificattion/logs", datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 return tf.keras.callbacks.TensorBoard(logdir)`
+### Early stopping callback
+Early stopping helps stop our model from overfitting by stopping training if a certain evaluation metric stops improving
