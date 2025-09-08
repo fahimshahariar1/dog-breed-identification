@@ -158,3 +158,8 @@ def create_model(input_shape=INPUT_SHAPE, output_shape=OUTPUT_SHAPE, model_url=M
 
 model = create_model()
 model.summary()
+## Creating Callbacks
+
+Callbacks help us as a function for our model that can be used during training for things such as save progress, check its progress
+
+### Tensoboard Callback 
