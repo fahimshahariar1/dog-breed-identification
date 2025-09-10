@@ -172,4 +172,5 @@ return tf.keras.callbacks.TensorBoard(logdir)`
 ### Early stopping callback
 Early stopping helps stop our model from overfitting by stopping training if a certain evaluation metric stops improving
 `early_stopping = tf.keras.callbacks.EarlyStopping(monitor = "val_accuracy", patience=3)`
-## Training a model (On subset of data)
+## Training a model (On subset of data)<br>
+`NUM_EPOCHS = 100 #@param {type:"slider", min:10, max:100, step:10}`
