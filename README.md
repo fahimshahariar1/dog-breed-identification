@@ -176,3 +176,4 @@ Early stopping helps stop our model from overfitting by stopping training if a c
 `NUM_EPOCHS = 100 #@param {type:"slider", min:10, max:100, step:10}`
 model = train_model()
 <img width="1083" height="491" alt="image" src="https://github.com/user-attachments/assets/1b6a2ee0-aeae-4cb6-9629-534b224d768b" />
+## Making and evaluating predictions using a trained model
