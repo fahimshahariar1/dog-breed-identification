@@ -212,4 +212,16 @@ val_images[0], val_labels[0]`<br>
     color = "red"
   plt.title(f"Prediction: {pred_label}, {np.max(pred_prob)*100:.1f}% | GT: {true_label}", color=color)
   plt.axis(False)`<br>
-<img width="644" height="470" alt="image" src="https://github.com/user-attachments/assets/1feec23d-a78b-454c-b4b8-a10a922294fd" />
+<img width="644" height="470" alt="image" src="https://github.com/user-attachments/assets/1feec23d-a78b-454c-b4b8-a10a922294fd" /><br>
+`def plot_pred_conf(prediction_probabilities, labels, n=1):
+  pred_prob, true_label = prediction_probabilities[n], labels[n]
+  pred_label = get_pred_label(pred_prob)
+  top_10_pred_indexes = pred_prob.argsort()[-10:][::-1]
+  top_10_pred_values = pred_prob[top_10_pred_indexes]
+  top_10_pred_labels = unique_breeds[top_10_pred_indexes]
+  colors = ["blue"] * 10  # Start with all blue bars
+  if true_label in top_10_pred_labels:
+    true_label_index = np.where(top_10_pred_labels == true_label)[0][0]
+    colors[true_label_index] = "green" # Set the color of the true label bar to green
+  plt.bar(range(10), top_10_pred_values, tick_label=top_10_pred_labels, color=colors)
+  plt.xticks(rotation="vertical")`<br>
