@@ -225,3 +225,4 @@ val_images[0], val_labels[0]`<br>
     colors[true_label_index] = "green" # Set the color of the true label bar to green
   plt.bar(range(10), top_10_pred_values, tick_label=top_10_pred_labels, color=colors)
   plt.xticks(rotation="vertical")`<br>
+<img width="594" height="659" alt="image" src="https://github.com/user-attachments/assets/ed4f3e9f-45a8-4d5d-a8de-b61a2ff5dfb0" />
