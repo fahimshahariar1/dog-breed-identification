@@ -212,3 +212,4 @@ val_images[0], val_labels[0]`<br>
     color = "red"
   plt.title(f"Prediction: {pred_label}, {np.max(pred_prob)*100:.1f}% | GT: {true_label}", color=color)
   plt.axis(False)`<br>
+<img width="644" height="470" alt="image" src="https://github.com/user-attachments/assets/1feec23d-a78b-454c-b4b8-a10a922294fd" />
