@@ -177,3 +177,11 @@ Early stopping helps stop our model from overfitting by stopping training if a c
 model = train_model()
 <img width="1083" height="491" alt="image" src="https://github.com/user-attachments/assets/1b6a2ee0-aeae-4cb6-9629-534b224d768b" />
 ## Making and evaluating predictions using a trained model
+`predictions = model.predict(val_data, verbose=1)
+predictions`<br>
+`Turn prediction probabilities into label
+def get_pred_label(prediction_probabilities):
+  """Turns an array of prediction probabilities into a label."""
+  return unique_breeds[np.argmax(prediction_probabilities)]
+pred_label = get_pred_label(predictions[81])
+pred_label`<br>
