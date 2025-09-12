@@ -185,3 +185,16 @@ def get_pred_label(prediction_probabilities):
   return unique_breeds[np.argmax(prediction_probabilities)]
 pred_label = get_pred_label(predictions[81])
 pred_label`<br>
+Create a function to unbatch a dataset<br>
+`def unbatchify(data):
+  """
+  Takes a batched dataset of (image, label) Tensors and returns separate arrays
+  of images and labels"""
+  images = []
+  labels = []
+  for image, label in data.unbatch():
+    images.append(image.numpy())
+    labels.append(unique_breeds[label.numpy().argmax()])
+  return images, labels
+val_images, val_labels = unbatchify(val_data)
+val_images[0], val_labels[0]`<br>
