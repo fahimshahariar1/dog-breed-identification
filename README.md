@@ -198,3 +198,17 @@ Create a function to unbatch a dataset<br>
   return images, labels
 val_images, val_labels = unbatchify(val_data)
 val_images[0], val_labels[0]`<br>
+`def plot_pred(prediction_probabilities, labels, images, n=1):
+  """
+  View the prediction"""
+  pred_prob, true_label, image = prediction_probabilities[n], labels[n], images[n]
+  pred_label = get_pred_label(pred_prob)
+  plt.imshow(image)
+  plt.xticks([])
+  plt.yticks([])
+  if pred_label == true_label:
+    color = "green"
+  else:
+    color = "red"
+  plt.title(f"Prediction: {pred_label}, {np.max(pred_prob)*100:.1f}% | GT: {true_label}", color=color)
+  plt.axis(False)`<br>
