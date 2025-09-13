@@ -226,3 +226,10 @@ val_images[0], val_labels[0]`<br>
   plt.bar(range(10), top_10_pred_values, tick_label=top_10_pred_labels, color=colors)
   plt.xticks(rotation="vertical")`<br>
 <img width="594" height="659" alt="image" src="https://github.com/user-attachments/assets/ed4f3e9f-45a8-4d5d-a8de-b61a2ff5dfb0" />
+## Training a dog model on full data
+`full_data = create_data_batches(X, y)
+full_data`<br>
+
+`from tf_keras.callbacks import EarlyStopping, TensorBoard
+full_model_tensorboard = TensorBoard(log_dir="/content/drive/MyDrive/Dog Breed Identificattion/logs/full_model_run")
+full_model_early_stopping = EarlyStopping(monitor="val_accuracy", patience=3, restore_best_weights=True)`
