@@ -246,3 +246,9 @@ Filling the Id column
 test_ids = [os.path.splitext(path)[0] for path in os.listdir(test_path)]
 preds_df["id"] = test_ids
 preds_df.head()<br>
+Adding datas to other columns<br>
+preds_df[list(unique_breeds)] = test_predictions
+preds_df.head()
+
+Creating a submission file<br>
+preds_df.to_csv("submission.csv", index=False)
