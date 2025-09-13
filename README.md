@@ -252,3 +252,4 @@ preds_df.head()
 
 Creating a submission file<br>
 preds_df.to_csv("submission.csv", index=False)
+<img width="1110" height="134" alt="image" src="https://github.com/user-attachments/assets/fd2ef6cf-8fd4-451e-9491-a07eced201a0" />
