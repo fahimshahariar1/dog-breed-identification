@@ -246,10 +246,11 @@ Filling the Id column
 test_ids = [os.path.splitext(path)[0] for path in os.listdir(test_path)]
 preds_df["id"] = test_ids
 preds_df.head()<br>
-Adding datas to other columns<br>
+Adding data to other columns<br>
 preds_df[list(unique_breeds)] = test_predictions
 preds_df.head()
 
 Creating a submission file<br>
 preds_df.to_csv("submission.csv", index=False)
-<img width="1110" height="134" alt="image" src="https://github.com/user-attachments/assets/fd2ef6cf-8fd4-451e-9491-a07eced201a0" />
+<img width="1110" height="134" alt="image" src="https://github.com/user-attachments/assets/fd2ef6cf-8fd4-451e-9491-a07eced201a0" /><br>
+<img width="1063" height="643" alt="image" src="https://github.com/user-attachments/assets/9f5b99a0-3b5b-48dc-9286-fa0ffb31816d" />
