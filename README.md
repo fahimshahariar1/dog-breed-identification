@@ -236,4 +236,9 @@ full_model_early_stopping = EarlyStopping(monitor="val_accuracy", patience=3, re
 Loading test images file name
 `test_path = "/content/drive/MyDrive/Dog Breed Identificattion/test"
 test_filenames = [test_path + "/" + fname for fname in os.listdir(test_path)]
-test_filenames[:10]`
+test_filenames[:10]`<br>
+Making Predictions
+test_predictions = model.predict(test_data, verbose=1)
+Create pandas dataframe
+`preds_df = pd.DataFrame(columns=["id"] + list(unique_breeds))
+preds_df.head()`
