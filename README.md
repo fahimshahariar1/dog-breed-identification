@@ -241,4 +241,8 @@ Making Predictions
 test_predictions = model.predict(test_data, verbose=1)
 Create pandas dataframe
 `preds_df = pd.DataFrame(columns=["id"] + list(unique_breeds))
-preds_df.head()`
+preds_df.head()`<br>
+Filling the Id column
+test_ids = [os.path.splitext(path)[0] for path in os.listdir(test_path)]
+preds_df["id"] = test_ids
+preds_df.head()<br>
