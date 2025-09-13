@@ -232,4 +232,8 @@ full_data`<br>
 
 `from tf_keras.callbacks import EarlyStopping, TensorBoard
 full_model_tensorboard = TensorBoard(log_dir="/content/drive/MyDrive/Dog Breed Identificattion/logs/full_model_run")
-full_model_early_stopping = EarlyStopping(monitor="val_accuracy", patience=3, restore_best_weights=True)`
+full_model_early_stopping = EarlyStopping(monitor="val_accuracy", patience=3, restore_best_weights=True)`<br>
+Loading test images file name
+`test_path = "/content/drive/MyDrive/Dog Breed Identificattion/test"
+test_filenames = [test_path + "/" + fname for fname in os.listdir(test_path)]
+test_filenames[:10]`
